@@ -1,0 +1,15 @@
+.imagen{
+    width: 45px;
+    height: auto;
+}
+
+.infoContainer{
+    overflow-x:hidden;
+    overflow-y:visible;
+    height:500px;
+}
+
+.removeBullet{
+    list-style: none;
+    padding-top:1em
+}
