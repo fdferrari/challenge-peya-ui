@@ -30,15 +30,20 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    const query = queryString.parse(this.props.location.search);
-    const lat = query.lat;
-    const lng = query.lng;
+    let lat;
+    let lng;
+    if (this.props.location) {
+      const query = queryString.parse(this.props.location.search);
+      lat = query.lat;
+      lng = query.lng;
+    }
+    const user = this.props.user;
     return (
       <div className="container-fluid dashboard">
         <div className="row margin-bottom-10px">
           <div className="col">
             <h1>
-              Bienvenido! {this.props.user.name} {this.props.user.lastName}
+              Bienvenido! {user? user.name : null} {user?user.lastName:null}
             </h1>
           </div>
           <div className="col">
@@ -62,12 +67,17 @@ class Dashboard extends React.Component {
         </div>
         <div className="row">
           <div className="col">
-            <MapSearch toast={this.props.toast} country={this.props.user.country.id} lat={lat} lng={lng}/>
+            <MapSearch
+              toast={this.props.toast}
+              country={user?user.country.id:null}
+              lat={lat}
+              lng={lng}
+            />
           </div>
         </div>
         <ChangeTimeCacheModal
           show={this.state.modalShow}
-          ttl={this.props.user.ttl}
+          ttl={user?user.ttl:null}
           onConfirm={this._confirmChangeTTL}
           onHide={() => this.setState({ modalShow: false })}
         />
