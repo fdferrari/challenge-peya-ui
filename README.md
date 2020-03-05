@@ -1,68 +1,105 @@
+# Challenge UI Search PeYa
+
+Esta app brinda los siguientes servicios:
+
+* Búsqueda por geolocalización de restaurantes.
+
+# Technological Stack 
+
+Para la construcción de esta app se decidió el uso de la librería Javascript React para el desarrollo ágil de la UI basándose en componentes. Una de las principales ventajas al utilizar esta tecnologías es la capacidad de manipular de forma dinámica el DOM lo cual permite solo renderizar aquellas porciones de la app que solo hayan sufrido alguna modificación en su estado. Con esta tecnología es fácil organizar el código a través de componentes e incorporar distintas librerías que la complementen. De ser necesario, a través de React Native se puede reutilizar el código generado para la construcción de una aplicación móvil.
+
+# Pending Requirements
+
+* **Completar cobertura de tests**: solo se incluye "smoke test" sobre el renderizado de componentes.
+
+## Getting Started
+Estas instrucciones le permitirá tener la aplicación funcionando en su máquina local con fines de desarrollo y pruebas.
+
+### Prerequisities
+Para ejecutar la aplicación, es necesario tener instalado en su sistema lo siguiente:
+- [Node.JS](https://nodejs.org/en/) (>= v8.11.3)
+- [NPM](https://www.npmjs.com/get-npm) (>= v5.6.0)
+
+### Folder Structure
+
+```
+challenge-peya-ui/
+  ├───public
+  └───src/
+      .eslintrc.json
+      package.json
+      README.md
+```
+
+## Installing
+### Configuración de variables de entorno
+
+1. Crear en el directorio raiz del proyecto un archivo `.env.local`
+2. Establecer el valor de las siguientes variables de entorno. Por ejemplo:
+
+`.env.local` :
+
+```dosini
+# Conexión con backend
+REACT_APP_API=http://localhost:5000/api/
+# API KEY Google para el uso de maps (se puede utilizar esta key => https://blog.vanila.io/writing-a-google-maps-react-component-fae411588a91)
+REACT_APP_API_KEY_GOOGLE = AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo
+# Repositorio de imagenes de los restaurantes 
+REACT_APP_IMAGE = https://foobarfoo/restaurants/
+# Link al perfil del restaurant
+REACT_APP_PERFIL = http://foobarfoo/foo/bar/
+```
+
+### Instalación de dependencias
+
+Dentro de la carpeta del proyecto, ejecutar el siguiente comando para instalar todas las dependencias:
+```
+npm install
+```
+
+### Inicio de la aplicación
+
+```
+npm run start
+```
+
+Inicia la aplicación en `development mode`.<br />
+
+### Run test
+
+```
+npm run test
+```
+
+### Build Application
+
+```
+npm run build
+```
+Realiza el `build` de la aplicación para desplegar en producción. 
+
+### Serve app
+
+```
+npm run serve
+```
+Inicia un servidor para montar el build de la app.
+
+### Lint Source Code
+
+```
+npm run lint
+```
+
+## Built With
+
+* [React](https://reactjs.org/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+* [Google Maps React](https://www.npmjs.com/package/google-maps-react)
+* [Axios](https://www.npmjs.com/package/axios)
+
+## Authors
+
+* [Federico D. Ferrari](federico.d.ferrari@gmail.com)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
