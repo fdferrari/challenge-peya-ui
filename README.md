@@ -20,6 +20,13 @@ Para ejecutar la aplicación, es necesario tener instalado en su sistema lo sigu
 - [Node.JS](https://nodejs.org/en/) (>= v8.11.3)
 - [NPM](https://www.npmjs.com/get-npm) (>= v5.6.0)
 
+### Routes Documentation
+
+Las rutas de la app son las siguientes:
+
+* `http://host:port/login`
+* `http://host:port/search?lat=-34.90549&lng=-56.181319` (Tanto el valor de latitud como longitud son opcionales. En caso de no proporcionarlos, la app se posiciona de acuerdo a la geolocalización del browser o la establecida por default.)
+
 ### Folder Structure
 
 ```
